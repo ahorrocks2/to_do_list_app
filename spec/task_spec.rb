@@ -1,7 +1,11 @@
 require ('rspec')
 require('task')
 
-describe(Task)do
+describe(Task) do
+  before() do
+    Task.clear()
+  end
+
   describe("#description") do
     it("lets you give it a description") do
       test_task = Task.new("scrub the zebra")
@@ -30,5 +34,5 @@ describe(Task)do
       expect(Task.all()).to(eq([]))
     end
   end
-  
+
 end
